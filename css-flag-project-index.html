@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flag of India</title>
+    <style>
+      :root {
+        --saffron: #ff9933;
+        --white: #ffffff;
+        --green: #138808;
+        --navy: #000050;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        margin: 0;
+        padding: 20px;
+        background: #f4f1e9;
+        font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+      }
+
+      .flag {
+        display: grid;
+        grid-template-rows: repeat(3, 1fr);
+        position: relative;
+        width: min(900px, calc(100vw - 40px));
+        aspect-ratio: 3 / 2;
+        overflow: hidden;
+        box-shadow: 0 16px 38px rgb(38 39 35 / 18%);
+      }
+
+      .band-saffron {
+        background: var(--saffron);
+      }
+
+      .band-white {
+        background: var(--white);
+      }
+
+      .band-green {
+        background: var(--green);
+      }
+
+      .chakra {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 16.6667%;
+        aspect-ratio: 1;
+        border: 3px solid var(--navy);
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+        background: repeating-conic-gradient(
+          var(--navy) 0deg 2.4deg,
+          transparent 2.4deg 15deg
+        );
+      }
+
+      .chakra::after {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 9%;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        background: var(--navy);
+        content: "";
+        transform: translate(-50%, -50%);
+      }
+
+      @media (max-width: 520px) {
+        .flag {
+          box-shadow: 0 10px 24px rgb(38 39 35 / 16%);
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <main>
+      <div
+        class="flag"
+        role="img"
+        aria-label="Flag of India with saffron, white, and green bands and a navy Ashoka Chakra"
+      >
+        <div class="band-saffron" aria-hidden="true"></div>
+        <div class="band-white" aria-hidden="true"></div>
+        <div class="band-green" aria-hidden="true"></div>
+        <div class="chakra" aria-hidden="true"></div>
+      </div>
+    </main>
+  </body>
+</html>

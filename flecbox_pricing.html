@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Compare three flexible website hosting plans."
+    />
+    <title>Flexbox Pricing Table</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --ink: #25302d;
+        --muted: #68736d;
+        --paper: #f4f5ef;
+        --surface: #fff;
+        --line: #dce1d8;
+        --green: #275f50;
+        --lime: #d4ec91;
+        --coral: #dc684c;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        min-height: 100vh;
+        margin: 0;
+        padding: 56px 24px;
+        color: var(--ink);
+        background: var(--paper);
+        font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+        line-height: 1.55;
+      }
+
+      .page-heading {
+        width: min(100%, 1120px);
+        margin: 0 auto 34px;
+        text-align: center;
+      }
+
+      .eyebrow {
+        margin: 0 0 8px;
+        color: var(--green);
+        font-size: 11px;
+        font-weight: 800;
+        letter-spacing: 1.5px;
+      }
+
+      h1,
+      .plan-title {
+        font-family: Georgia, "Times New Roman", serif;
+      }
+      h1 {
+        margin: 0;
+        font-size: 42px;
+      }
+      .page-heading > p:last-child {
+        margin: 10px 0 0;
+        color: var(--muted);
+      }
+
+      .pricing-container {
+        display: flex;
+        justify-content: center;
+        align-items: stretch;
+        gap: 18px;
+        width: min(100%, 1120px);
+        margin: 0 auto;
+      }
+
+      .pricing-plan {
+        position: relative;
+        display: flex;
+        flex: 1 1 0;
+        flex-direction: column;
+        max-width: 360px;
+        min-width: 0;
+        padding: 28px;
+        border: 1px solid var(--line);
+        border-radius: 5px;
+        background: var(--surface);
+      }
+
+      .pricing-plan.featured {
+        border: 2px solid var(--green);
+        box-shadow: 6px 6px 0 var(--lime);
+      }
+
+      .plan-label {
+        min-height: 18px;
+        margin: 0 0 10px;
+        color: var(--coral);
+        font-size: 10px;
+        font-weight: 800;
+        letter-spacing: 1.2px;
+        text-transform: uppercase;
+      }
+
+      .plan-title {
+        margin: 0;
+        font-size: 25px;
+      }
+      .plan-price {
+        margin: 12px 0 20px;
+        font-size: 37px;
+        font-weight: 800;
+        line-height: 1.15;
+      }
+      .plan-price span {
+        color: var(--muted);
+        font-size: 13px;
+        font-weight: 500;
+      }
+
+      .plan-features {
+        display: grid;
+        gap: 12px;
+        margin: 0 0 26px;
+        padding: 18px 0 0;
+        border-top: 1px solid var(--line);
+        list-style: none;
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      .plan-features li::before {
+        content: "\2713";
+        margin-right: 9px;
+        color: var(--green);
+        font-weight: 800;
+      }
+
+      .plan-button {
+        display: block;
+        margin-top: auto;
+        padding: 12px 16px;
+        border: 1px solid var(--green);
+        border-radius: 4px;
+        color: var(--green);
+        font-size: 14px;
+        font-weight: 800;
+        text-align: center;
+        text-decoration: none;
+      }
+
+      .featured .plan-button {
+        color: #fff;
+        background: var(--green);
+      }
+      .plan-button:hover {
+        border-color: var(--coral);
+        color: #fff;
+        background: var(--coral);
+      }
+      a:focus-visible {
+        outline: 3px solid var(--coral);
+        outline-offset: 4px;
+      }
+
+      @media (max-width: 860px) {
+        .pricing-container {
+          flex-wrap: wrap;
+        }
+        .pricing-plan {
+          flex-basis: calc(50% - 9px);
+        }
+      }
+
+      @media (max-width: 580px) {
+        body {
+          padding: 38px 18px;
+        }
+        h1 {
+          font-size: 34px;
+        }
+        .pricing-container {
+          flex-direction: column;
+          align-items: center;
+        }
+        .pricing-plan {
+          flex-basis: auto;
+          width: min(100%, 390px);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="page-heading">
+      <p class="eyebrow">SIMPLE, FLEXIBLE PLANS</p>
+      <h1>Choose your plan</h1>
+      <p>Every plan includes reliable storage and room to grow.</p>
+    </header>
+
+    <main class="pricing-container" aria-label="Pricing plans">
+      <article class="pricing-plan">
+        <p class="plan-label">A great start</p>
+        <h2 class="plan-title">Basic</h2>
+        <p class="plan-price">$9.99<span>/ month</span></p>
+        <ul class="plan-features">
+          <li>10 GB storage</li>
+          <li>1 user</li>
+          <li>Community support</li>
+        </ul>
+        <a class="plan-button" href="contact.html"
+          >Choose Basic</a
+        >
+      </article>
+
+      <article class="pricing-plan featured">
+        <p class="plan-label">Most popular</p>
+        <h2 class="plan-title">Standard</h2>
+        <p class="plan-price">$19.99<span>/ month</span></p>
+        <ul class="plan-features">
+          <li>50 GB storage</li>
+          <li>5 users</li>
+          <li>Phone and email support</li>
+        </ul>
+        <a class="plan-button" href="contact.html"
+          >Choose Standard</a
+        >
+      </article>
+
+      <article class="pricing-plan">
+        <p class="plan-label">Room to grow</p>
+        <h2 class="plan-title">Premium</h2>
+        <p class="plan-price">$49.99<span>/ month</span></p>
+        <ul class="plan-features">
+          <li>100 GB storage</li>
+          <li>10 users</li>
+          <li>24/7 support</li>
+        </ul>
+        <a class="plan-button" href="contact.html"
+          >Choose Premium</a
+        >
+      </article>
+    </main>
+  </body>
+</html>
